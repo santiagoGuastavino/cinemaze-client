@@ -17,9 +17,11 @@ export async function getData (req, res, next) {
   axios(config)
     .then((response) => {
       const data = response.data.d.results
-      data.map(document => (
+      data.map(document => {
         delete document.__metadata
-      ))
+        document.MONTO = (document.MONEDA + '$' + document.IMPORTE_ML).replace(/\s/g, '')
+        return document
+      })
       return res.status(200).json(data)
     })
     .catch((err) => next(err))
