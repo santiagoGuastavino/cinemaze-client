@@ -1,10 +1,10 @@
 import express from 'express'
 import {
-  getData
+  getMapSendData
 } from '../controllers/dataController.js'
 
 const router = express.Router()
 
-router.get('/data', getData)
+router.get('/data', getMapSendData)
 
 export default router
