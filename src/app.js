@@ -10,8 +10,10 @@ app.use(cors())
 app.use('/api', dataRouter)
 
 app.use((err, req, res, next) => {
-  console.log(err)
-  res.status(500).json({ error: err.message })
+  res.status(500).json({
+    status: 'error',
+    message: err.message
+  })
 })
 
 const PORT = process.env.PORT || 3001

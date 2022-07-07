@@ -5,6 +5,6 @@ import {
 
 const router = express.Router()
 
-router.get('/data', getMapSendData)
+router.get('/data/:id', getMapSendData)
 
 export default router
