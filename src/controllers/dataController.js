@@ -20,7 +20,9 @@ export async function getMapSendData (req, res, next) {
   try {
     const openEntries = dataMapper(openEntriesResponse.data.d.results)
     const allEntries = dataMapper(allEntriesResponse.data.d.results)
+    const title = allEntries[0].NOMBRE || ''
     return res.status(200).json({
+      title,
       openEntries,
       allEntries
     })
