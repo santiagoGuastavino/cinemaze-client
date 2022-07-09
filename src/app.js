@@ -7,6 +7,7 @@ import dataRouter from './routes/data.js'
 const app = express()
 app.use(cors())
 
+app.get('/favicon.ico', (req, res) => res.status(204))
 app.use('/api', dataRouter)
 
 app.use((err, req, res, next) => {
