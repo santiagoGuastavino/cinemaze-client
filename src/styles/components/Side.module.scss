@@ -1,0 +1,20 @@
+@import '../_constants.scss';
+
+.div {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  border-right: 2px solid $c-green;
+
+  h1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 10px 0;
+  }
+
+  img {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
